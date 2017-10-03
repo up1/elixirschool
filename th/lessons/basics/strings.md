@@ -11,7 +11,6 @@ Strings, Char Lists, Graphemes และ Codepoints.
 
 ## Strings
 
-Elixir strings are nothing but a sequence of bytes. Let's look at an example:
 String ใน Elixir นั้นคือลำดับของ byte ดูใน code ตัวอย่าง
 
 ```elixir
@@ -21,18 +20,12 @@ iex> string <> <<0>>
 <<104, 101, 108, 108, 111, 0>>
 ```
 
-By concatenating the string with the byte `0`, IEx displays the string as a binary because it is not a valid string anymore. This trick can help us view the underlying bytes of any string.
-
 จาก code ตัวอย่างทำการต่อ string ด้วย byte ที่มีค่า `0` แล้ว IEx แสดงข้อมูลของ string เป็น binary
 เนื่องจาก <<0>> ไม่ใช่ข้อมูลชนิด string แต่เป็น byte ด้วยวิธีนี้ทำให้แสดงข้อมูลแต่ละ byte ของ string ออกมา
 
 >NOTE: การใช้สัญลักษณ์ <<>> เพื่อบอกให้ compiler รู้ว่าค่าที่อยู่ข้างในมีชนิดเป็น byte
 
 ## Charlists
-
-Internally, Elixir strings are represented with a sequence of bytes rather than an array of characters. Elixir also has a char list type (character list). Elixir strings are enclosed with double quotes, while char lists are enclosed with single quotes.
-
-What's the difference? Each value in a charlist is the Unicode code point of a character whereas in a binary, the codepoints are encoded as UTF-8. Let's dig in:
 
 การทำงานภายในของ Elixir นั้นข้อมูลชนิด string เป็นลำดับของ byte แทนที่จะเป็น array ของ character
 ดังนั้น Elixir จึงมีข้อมูลชนิด char list (character list)
@@ -50,12 +43,8 @@ iex(6)> "hełło" <> <<0>>
 <<104, 101, 197, 130, 197, 130, 111, 0>>
 ```
 
-`322` is the Unicode codepoint for ł but it is encoded in UTF-8 as the two bytes `197`, `130`.
-
-322 คือค่า Unicode ของ ł
-ส่วน UTF-8 จะมี 2  byte คือ 197 และ 130
-
-When programming in Elixir, we usually use strings, not charlists. The charlist support is mainly included because it is required for some Erlang modules.
+`322` คือค่า Unicode ของ `ł`
+ส่วน UTF-8 จะมี 2  byte คือ `197` และ `130`
 
 โดยปกติการเขียนโปรแกรมใน Elixir จะใช้ string
 เนื่องจากถ้าใช้งาน charlist จำเป็นต้องใช้ module จากภาษา Erlang ด้วย
