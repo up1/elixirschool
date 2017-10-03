@@ -70,11 +70,11 @@ iex> String.graphemes string
 
 ## String Functions
 
-Let's review some of the most important and useful functions of the String module. This lesson will only cover a subset of the available functions. To see a complete set of functions visit the official [`String`](https://hexdocs.pm/elixir/String.html) docs.
+มาดู function ที่สำคัญและมีประโยชน์มาก ๆ ของ String module ซึ่งสามารถรายละเอียดของ function ทั้งหมดได้ที่ [`String`](https://hexdocs.pm/elixir/String.html)
 
 ### `length/1`
 
-Returns the number of Graphemes in the string.
+ทำการส่งค่าจำนวนของ Graphemes ใน string ที่กำหนดกลับมา
 
 ```elixir
 iex> String.length "Hello"
@@ -83,7 +83,7 @@ iex> String.length "Hello"
 
 ### `replace/3`
 
-Returns a new string replacing a current pattern in the string with some new replacement string.
+ทำการส่งค่าใหม่ชนิด string โดยข้อมูลถูกแทนที่ด้วยค่าใหม่ตามรูปแบบที่ต้องการกลับมาให้
 
 ```elixir
 iex> String.replace("Hello", "e", "a")
@@ -92,7 +92,7 @@ iex> String.replace("Hello", "e", "a")
 
 ### `duplicate/2`
 
-Returns a new string repeated n times.
+ทำการส่งค่าใหม่ชนิด string โดยข้อมูลจะซ้ำกันตามจำนวนที่กำหนดกลับมาให้
 
 ```elixir
 iex> String.duplicate("Oh my ", 3)
@@ -101,14 +101,14 @@ iex> String.duplicate("Oh my ", 3)
 
 ### `split/2`
 
-Returns a list of strings split by a pattern.
+ทำการส่งค่า list ของ string โดยแยกตามรูปแบบที่กำหนกกลับมาก
 
 ```elixir
 iex> String.split("Hello World", " ")
 ["Hello", "World"]
 ```
 
-## Exercises
+## แบบฝึกหัด
 
 Let's walk through a simple exercises to demonstrate we are ready to go with Strings!
 
